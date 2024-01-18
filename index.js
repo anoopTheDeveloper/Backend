@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 });
 
 try {
-  mongoose.connect(`mongodb+srv://Anoop:anoop123@cluster0.vayg0jw.mongodb.net/`);
+  mongoose.connect(`${process.env.MONGO_URL}`);
 } catch (error) {
   console.log("DB connection failed");
 }
