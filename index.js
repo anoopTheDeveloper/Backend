@@ -84,8 +84,8 @@ app.post("/register", async (req, res) => {
           },
         ],
         weather: {
-          temp: weatherData.current.temp,
-          humidity: weatherData.humidity,
+          temp: weatherData.current.temp_c,
+          humidity: weatherData.current.humidity,
         },
       });
     }
