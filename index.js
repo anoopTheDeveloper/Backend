@@ -5,7 +5,6 @@ const cors = require("cors");
 const axios = require("axios");
 const mongoose = require("mongoose");
 const app = express();
-app.use(express.static('dist'))
 app.use(cors());
 app.use(express.json());
 
@@ -65,10 +64,10 @@ app.post("/register", async (req, res) => {
         });
 
         await existingUser.save();
-
+        res.send("user added successfully")
       } 
 
-    else{
+    
 
     const weatherData = await fetchweatherData(Bankdata.CITY);
 
@@ -94,10 +93,12 @@ app.post("/register", async (req, res) => {
           humidity: weatherData.current.humidity,
         },
     });
-  }
 
-    return res.send("User added successfully");
-  } catch (error) {
+    return res.send("User created successfully");
+
+  }
+  
+  catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
   }
