@@ -102,7 +102,7 @@ app.post("/register", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
-
+  
 app.get("/api/details", async (req, res) => {
   const allUser = await User.find();
   res.send(allUser);
