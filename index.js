@@ -104,3 +104,4 @@ app.get("/api/details", async (req, res) => {
 app.listen(process.env.PORT, () => {
   console.log(`Server is ready at port ${process.env.PORT}`);
 });
+ 
